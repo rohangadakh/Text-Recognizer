@@ -24,7 +24,7 @@ import java.util.List;
 
 public class sub_module extends AppCompatActivity {
 
-    final String[] links = { "https://www.nationalgeographic.com/science/article/mountains", "https://www.nationalgeographic.com/science/article/himalaya-breathes-with-mountains-growing-and-shrinking-in-cycles", "https://education.nationalgeographic.org/resource/oxbow-lake" };
+    final String[] links = { "https://www.youtube.com/@textrecognizer?feature=shares", "https://www.youtube.com/@textrecognizer?feature=shares", "https://github.com/rohangadakh/Text-Recognizer.git" };
     ImageSlider imageSlider;
     ImageView img_ocr;
     File[] files;
