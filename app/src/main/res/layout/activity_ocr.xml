@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity_ocr"
+    android:background="@color/DarkBlue">
+
+
+    <ImageView
+        android:id="@+id/img_capture"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginTop="130dp"
+        android:contentDescription="@string/imageview_doc_image"
+        android:src="@drawable/img_doc" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="360dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginEnd="14dp"
+        android:layout_marginTop="285dp"
+        android:background="@drawable/style_round_corner"
+        android:contentDescription="@string/background_for_listview" />
+
+    <EditText
+        android:id="@+id/text_result"
+        android:layout_width="match_parent"
+        android:layout_height="330dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="305dp"
+        android:layout_marginEnd="20dp"
+        android:gravity="start"
+        android:hint="@string/result_will_appear_here"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        android:editable="false"
+        android:scrollbars="vertical"
+        android:maxLines="100"
+
+        android:importantForAutofill="no" />
+
+    <Button
+        android:id="@+id/btn_copy"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="680dp"
+        android:background="@drawable/style_round_btn"
+        android:text="@string/copy"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/btn_detect"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="224dp"
+        android:layout_marginTop="680dp"
+        android:background="@drawable/style_round_btn"
+        android:text="@string/detect"
+        android:textAllCaps="false" />
+
+    <!--  -->
+
+    <!---->
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btn_img"
+        android:layout_width="match_parent"
+        android:layout_height="110dp"
+        android:layout_centerHorizontal="true"
+        android:backgroundTint="@color/Red"
+        android:layout_marginTop="675dp"
+        android:src="@drawable/baseline_photo_library_24"
+        app:backgroundTint="@color/white"
+        app:borderWidth="2dp"
+        android:contentDescription="@string/todo" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btn_snap"
+        android:layout_width="95dp"
+        android:layout_height="95dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="575dp"
+        android:layout_marginBottom="1dp"
+        android:backgroundTint="@color/Red"
+        android:contentDescription="@string/snap_btn"
+        android:visibility="gone"
+        android:src="@drawable/baseline_camera_alt_24"
+        app:backgroundTint="@color/white"
+        app:borderWidth="2dp"
+        app:fabSize="mini" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btn_load"
+        android:layout_width="95dp"
+        android:layout_height="95dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="625dp"
+        android:backgroundTint="@color/Red"
+        android:contentDescription="@string/load_btn"
+        android:visibility="gone"
+        android:src="@drawable/baseline_image_24"
+        app:backgroundTint="@color/white"
+        app:borderWidth="2dp"
+        app:fabSize="mini" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/float_add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="14dp"
+        android:layout_marginBottom="667dp"
+        android:backgroundTint="@color/skyBlueBG"
+        android:src="@drawable/ic_baseline_add_24"
+        app:fabSize="mini"
+        tools:ignore="SpeakableTextPresentCheck"
+        app:backgroundTint="@color/white"
+        app:borderWidth="2dp"
+        android:contentDescription="@string/float_add" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/float_pdf"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="14dp"
+        android:layout_marginBottom="621dp"
+        android:visibility="gone"
+        android:backgroundTint="@color/skyBlueBG"
+        app:backgroundTint="@color/white"
+        app:borderWidth="2dp"
+        android:src="@drawable/ic_baseline_picture_as_pdf_24"
+        app:fabSize="mini"
+        android:contentDescription="@string/float_pdf" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/float_docx"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="14dp"
+        android:layout_marginBottom="574dp"
+        android:visibility="gone"
+        android:backgroundTint="@color/skyBlueBG"
+        android:src="@drawable/ic_baseline_file_copy_24"
+        app:backgroundTint="@color/white"
+        app:borderWidth="2dp"
+        app:fabSize="mini"
+        android:contentDescription="@string/float_docx" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/float_share"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="14dp"
+        android:layout_marginBottom="526dp"
+        android:visibility="gone"
+        android:backgroundTint="@color/skyBlueBG"
+        android:src="@drawable/baseline_share_24"
+        app:backgroundTint="@color/white"
+        app:borderWidth="2dp"
+        app:fabSize="mini"
+        android:contentDescription="@string/float_share" />
+
+    <EditText
+        android:id="@+id/text_filename"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="20dp"
+        android:hint="@string/enter_file_name"
+        android:maxLines="1"
+        tools:ignore="TouchTargetSizeCheck,VisualLintTextFieldSize" />
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="204dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="246dp"
+        android:layout_marginStart="192dp"
+        />
+
+</RelativeLayout>

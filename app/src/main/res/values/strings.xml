@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">TexT Recognizer</string>
+    <string name="let_s_go">Let\'s Go</string>
+    <string name="imageview_doc_image">ImageView-doc_image</string>
+    <string name="background_for_ocr_pdf_doc">Background for OCR-PDF-DOC</string>
+    <string name="ocr">OCR</string>
+    <string name="pdf">PDF</string>
+    <string name="docx">DOCX</string>
+    <string name="background_for_listview">Background for listview</string>
+    <string name="result_will_appear_here">Result will appear here</string>
+    <string name="enter_file_name">Enter Filename</string>
+    <string name="select">Selected Item</string>
+    <string name="copy">Copy</string>
+    <string name="detect">Detect</string>
+    <string name="todo">TODO</string>
+    <string name="snap_btn">TODO</string>
+    <string name="load_btn">TODO</string>
+    <string name="float_add">TODO</string>
+    <string name="select_hint">Select</string>
+    <string name="float_pdf">TODO</string>
+    <string name="float_docx">TODO</string>
+    <string name="float_share">TODO</string>
+</resources>

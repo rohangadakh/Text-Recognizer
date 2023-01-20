@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/DarkBlue"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="95dp"
+        android:layout_marginTop="180dp"
+        android:src="@drawable/img_doc"
+        android:contentDescription="@string/imageview_doc_image"/>
+
+    <Button
+        android:id="@+id/btn_lets_go"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="600dp"
+        android:layout_marginEnd="60dp"
+        android:background="@drawable/style_round_btn"
+        android:text="@string/let_s_go"
+        android:textAllCaps="false"
+        tools:ignore="TextContrastCheck,VisualLintButtonSize" />
+
+</RelativeLayout>
