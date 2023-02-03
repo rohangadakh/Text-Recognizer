@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/DarkBlue"
+    android:background="@color/black"
     tools:context=".sub_module">
 
     <com.denzcoskun.imageslider.ImageSlider
@@ -15,10 +15,11 @@
         android:layout_marginEnd="14dp"
         android:layout_marginTop="50dp"
         app:iss_auto_cycle="true"
-        app:iss_corner_radius="20"
         app:iss_delay="0"
+        android:elevation="2dp"
         app:iss_error_image="@color/teal_200"
         app:iss_period="3000"
+        android:background="@drawable/style_rd"
         app:iss_placeholder="@color/black" />
 
     <ImageView
@@ -27,6 +28,7 @@
         android:layout_marginStart="95dp"
         android:layout_marginTop="272dp"
         android:elevation="1dp"
+        android:visibility="gone"
         android:src="@drawable/text" />
 
     <ImageView
@@ -35,7 +37,7 @@
         android:layout_marginStart="14dp"
         android:layout_marginTop="260dp"
         android:layout_marginEnd="14dp"
-        android:background="@drawable/style_round_corner"
+        android:background="@drawable/style_rd"
         android:contentDescription="@string/background_for_ocr_pdf_doc" />
 
     <ImageView
@@ -54,15 +56,25 @@
         android:layout_marginStart="14dp"
         android:layout_marginEnd="14dp"
         android:layout_marginTop="350dp"
-        android:background="@drawable/style_round_corner"
+        android:background="@drawable/style_rd"
         android:contentDescription="@string/background_for_listview" />
 
-    <ListView
-        android:id="@+id/listView"
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/refresh"
         android:layout_width="match_parent"
         android:layout_height="385dp"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
-        android:layout_marginTop="350dp" />
+        android:layout_marginTop="350dp">
+
+        <ListView
+            android:id="@+id/listView"
+            android:layout_width="match_parent"
+            android:layout_height="385dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginTop="350dp" />
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
 </RelativeLayout>

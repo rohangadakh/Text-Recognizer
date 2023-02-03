@@ -1,6 +1,7 @@
 package com.rohya.docthing;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
@@ -11,6 +12,7 @@ import android.widget.ListView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.FileProvider;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.denzcoskun.imageslider.ImageSlider;
 import com.denzcoskun.imageslider.constants.ScaleTypes;
@@ -24,12 +26,14 @@ import java.util.List;
 
 public class sub_module extends AppCompatActivity {
 
-    final String[] links = { "https://www.youtube.com/@textrecognizer?feature=shares", "https://www.youtube.com/@textrecognizer?feature=shares", "https://github.com/rohangadakh/Text-Recognizer.git" };
+    final String[] links = { "https://www.youtube.com/@textrecognizer?feature=shares", "https://github.com/rohangadakh/Text-Recognizer.git", "https://www.youtube.com/@textrecognizer?feature=shares" };
     ImageSlider imageSlider;
     ImageView img_ocr;
     File[] files;
 
+    int position;
 
+    SwipeRefreshLayout swipeRefreshLayout;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,10 +43,20 @@ public class sub_module extends AppCompatActivity {
         img_ocr = findViewById(R.id.img_ocr);
         ListView listView = findViewById(R.id.listView);
 
+        swipeRefreshLayout = findViewById(R.id.refresh);
+
+        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                swipeRefreshLayout.setRefreshing(false);
+                listView.setOnItemClickListener((adapterView, view, position, id) -> openFile(position));
+            }
+        });
+
         List<SlideModel> slideModels = new ArrayList<>();
-        slideModels.add(new SlideModel(R.drawable.image_1,  ScaleTypes.CENTER_INSIDE));
         slideModels.add(new SlideModel(R.drawable.image_2,  ScaleTypes.CENTER_INSIDE));
         slideModels.add(new SlideModel(R.drawable.image_3,  ScaleTypes.CENTER_INSIDE));
+        slideModels.add(new SlideModel(R.drawable.image_1,  ScaleTypes.CENTER_INSIDE));
         imageSlider.setImageList(slideModels);
 
         imageSlider.setItemClickListener(position -> {
@@ -67,6 +81,7 @@ public class sub_module extends AppCompatActivity {
         listView.setAdapter(adapter);
 
         listView.setOnItemClickListener((adapterView, view, position, id) -> openFile(position));
+
     }
 
     private void openFile(int position) {

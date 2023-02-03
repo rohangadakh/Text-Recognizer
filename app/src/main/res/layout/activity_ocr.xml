@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".activity_ocr"
-    android:background="@color/DarkBlue">
+    android:background="@color/black">
 
 
     <ImageView
@@ -18,10 +18,11 @@
 
     <ImageView
         android:layout_width="match_parent"
-        android:layout_height="360dp"
+        android:layout_height="363dp"
         android:layout_marginStart="14dp"
         android:layout_marginEnd="14dp"
         android:layout_marginTop="285dp"
+        android:backgroundTint="@color/white"
         android:background="@drawable/style_round_corner"
         android:contentDescription="@string/background_for_listview" />
 
@@ -33,10 +34,10 @@
         android:layout_marginTop="305dp"
         android:layout_marginEnd="20dp"
         android:gravity="start"
+        android:textColorHint="@color/black"
         android:hint="@string/result_will_appear_here"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:textSize="14sp"
-        android:editable="false"
         android:scrollbars="vertical"
         android:maxLines="100"
 
@@ -50,6 +51,7 @@
         android:layout_marginTop="680dp"
         android:background="@drawable/style_round_btn"
         android:text="@string/copy"
+        android:textColor="@color/white"
         android:textAllCaps="false" />
 
     <Button
@@ -60,6 +62,7 @@
         android:layout_marginTop="680dp"
         android:background="@drawable/style_round_btn"
         android:text="@string/detect"
+        android:textColor="@color/white"
         android:textAllCaps="false" />
 
     <!--  -->
@@ -71,7 +74,7 @@
         android:layout_width="match_parent"
         android:layout_height="110dp"
         android:layout_centerHorizontal="true"
-        android:backgroundTint="@color/Red"
+        android:backgroundTint="@color/n_red"
         android:layout_marginTop="675dp"
         android:src="@drawable/baseline_photo_library_24"
         app:backgroundTint="@color/white"
@@ -85,7 +88,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="575dp"
         android:layout_marginBottom="1dp"
-        android:backgroundTint="@color/Red"
+        android:backgroundTint="@color/black"
         android:contentDescription="@string/snap_btn"
         android:visibility="gone"
         android:src="@drawable/baseline_camera_alt_24"
@@ -99,7 +102,7 @@
         android:layout_height="95dp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="625dp"
-        android:backgroundTint="@color/Red"
+        android:backgroundTint="@color/black"
         android:contentDescription="@string/load_btn"
         android:visibility="gone"
         android:src="@drawable/baseline_image_24"
@@ -115,7 +118,7 @@
         android:layout_alignParentBottom="true"
         android:layout_marginEnd="14dp"
         android:layout_marginBottom="667dp"
-        android:backgroundTint="@color/skyBlueBG"
+        android:backgroundTint="@color/n_red"
         android:src="@drawable/ic_baseline_add_24"
         app:fabSize="mini"
         tools:ignore="SpeakableTextPresentCheck"
@@ -134,7 +137,7 @@
         android:layout_marginEnd="14dp"
         android:layout_marginBottom="621dp"
         android:visibility="gone"
-        android:backgroundTint="@color/skyBlueBG"
+        android:backgroundTint="@color/black"
         app:backgroundTint="@color/white"
         app:borderWidth="2dp"
         android:src="@drawable/ic_baseline_picture_as_pdf_24"
@@ -150,7 +153,7 @@
         android:layout_marginEnd="14dp"
         android:layout_marginBottom="574dp"
         android:visibility="gone"
-        android:backgroundTint="@color/skyBlueBG"
+        android:backgroundTint="@color/black"
         android:src="@drawable/ic_baseline_file_copy_24"
         app:backgroundTint="@color/white"
         app:borderWidth="2dp"
@@ -166,7 +169,7 @@
         android:layout_marginEnd="14dp"
         android:layout_marginBottom="526dp"
         android:visibility="gone"
-        android:backgroundTint="@color/skyBlueBG"
+        android:backgroundTint="@color/black"
         android:src="@drawable/baseline_share_24"
         app:backgroundTint="@color/white"
         app:borderWidth="2dp"
@@ -176,19 +179,22 @@
     <EditText
         android:id="@+id/text_filename"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="35dp"
         android:layout_marginStart="20dp"
         android:layout_marginTop="40dp"
         android:layout_marginEnd="20dp"
         android:hint="@string/enter_file_name"
         android:maxLines="1"
+        android:textSize="16sp"
+        android:paddingStart="9dp"
+        android:background="@drawable/style_rd"
         tools:ignore="TouchTargetSizeCheck,VisualLintTextFieldSize" />
 
     <Spinner
         android:id="@+id/spinner"
         android:layout_width="204dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="246dp"
+        android:layout_marginTop="244dp"
         android:layout_marginStart="192dp"
         />
 
