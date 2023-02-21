@@ -11,6 +11,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
+import android.speech.tts.TextToSpeech;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -53,10 +54,13 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.Locale;
 
 public class activity_ocr extends AppCompatActivity {
 
     ImageView img_capture;
+
+    private TextToSpeech mTTS;
 
     EditText txt_result, filename;
 
@@ -67,7 +71,7 @@ public class activity_ocr extends AppCompatActivity {
 
     private TextRecognizer textRecognizer;
 
-    FloatingActionButton f_docx, f_pdf, f_add, f_share, btn_snap, btn_load, btn_img;
+    FloatingActionButton f_docx, f_pdf, f_add, f_share, btn_snap, btn_load, btn_img, f_read;
 
     private Spinner spinner;
     String saveDOCname, selectedValue;
@@ -85,8 +89,6 @@ public class activity_ocr extends AppCompatActivity {
         Button btn_detect = findViewById(R.id.btn_detect);
         Button btn_copy = findViewById(R.id.btn_copy);
 
-       // img_capture = findViewById(R.id.img_capture);
-
         img_capture = findViewById(R.id.img_capture);
 
         txt_result = findViewById(R.id.text_result);
@@ -95,6 +97,7 @@ public class activity_ocr extends AppCompatActivity {
         f_add = findViewById(R.id.float_add);
         f_docx = findViewById(R.id.float_docx);
         f_pdf = findViewById(R.id.float_pdf);
+        f_read = findViewById(R.id.float_read);
         f_share = findViewById(R.id.float_share);
         btn_img = findViewById(R.id.btn_img);
         btn_load = findViewById(R.id.btn_load);
@@ -106,6 +109,20 @@ public class activity_ocr extends AppCompatActivity {
         ArrayAdapter adapter = new ArrayAdapter(this, com.google.android.material.R.layout.support_simple_spinner_dropdown_item,items);
         adapter.setDropDownViewResource(com.google.android.material.R.layout.support_simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
+
+        mTTS = new TextToSpeech(getApplicationContext(), new TextToSpeech.OnInitListener() {
+            @Override
+            public void onInit(int status) {
+                if (status == TextToSpeech.SUCCESS) {
+                    int result = mTTS.setLanguage(Locale.getDefault());
+                    if (result == TextToSpeech.LANG_MISSING_DATA || result == TextToSpeech.LANG_NOT_SUPPORTED) {
+                        Log.e("TTS", "Language not supported");
+                    }
+                } else {
+                    Log.e("TTS", "Initialization failed");
+                }
+            }
+        });
 
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -140,6 +157,7 @@ public class activity_ocr extends AppCompatActivity {
                 f_docx.show();
                 f_pdf.show();
                 f_share.show();
+                f_read.show();
                 aBoolean = false;
             }
             else
@@ -147,6 +165,7 @@ public class activity_ocr extends AppCompatActivity {
                 f_docx.hide();
                 f_pdf.hide();
                 f_share.hide();
+                f_read.hide();
                 aBoolean = true;
             }
         });
@@ -225,6 +244,14 @@ public class activity_ocr extends AppCompatActivity {
             intent.setType("text/plain");
             intent.putExtra(Intent.EXTRA_TEXT,txt_result.getText().toString());
             startActivity(intent);
+        });
+
+        f_read.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                speak(txt_result.getText().toString());
+            }
         });
 
         btn_load.setOnClickListener(v -> {
@@ -355,7 +382,7 @@ public class activity_ocr extends AppCompatActivity {
         cameraActivityResultLauncher.launch(intent);
     }
 
-    private ActivityResultLauncher<Intent> cameraActivityResultLauncher = registerForActivityResult(
+    private final ActivityResultLauncher<Intent> cameraActivityResultLauncher = registerForActivityResult(
             new ActivityResultContracts.StartActivityForResult(),
             new ActivityResultCallback<ActivityResult>() {
                 @Override
@@ -393,4 +420,10 @@ public class activity_ocr extends AppCompatActivity {
             Toast.makeText(this, "Error saving file"+e, Toast.LENGTH_SHORT).show();
         }
     }
+
+    private void speak(String text)
+    {
+        mTTS.speak(text, TextToSpeech.QUEUE_FLUSH, null, null);
+    }
+
 }

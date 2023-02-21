@@ -11,20 +11,19 @@
     <color name="skyBlueBG">#4acfef</color>
     <color name="geryBlueBG">#010922</color>
 
-    <color name="DarkBlue">#02182B</color>
-    <color name="GreyBlue">#003D5B</color>
-    <color name="Red">#D1495B</color>
-    <color name="GoldYellow">#EDAE49</color>
-    <color name="SkyBlue">#279AF1</color>
+    <color name="n_purple">#541388</color>
+    <color name="n_pink">#D90368</color>
+    <color name="n_cream">#F1E9DA</color>
+    <color name="n_darkBlue">#2E294E</color>
+    <color name="n_yellow">#FFD400</color>
 
-    <color name="GREY">#222222</color>
-    <color name="SKY_BLUE">#0598CE</color>
-    <color name="DARK_BLUE">#113768</color>
-    <color name="PERSIAN_BLUE">#001A33</color>
-
-    <color name="n_grey">#252525</color>
-    <color name="n_red">#EE4259</color>
-    <color name="n_pink">#FF847C</color>
-    <color name="n_peach">#FFCEA8</color>
+    <color name="primary">#1C1E46</color>
+    <color name="primary_dark">#142232</color>
+    <color name="primary_text">#212121</color>
+    <color name="secondary_text">#757575</color>
+    <color name="input_background">#ECECEC</color>
+    <color name="icon_background">#20FFFFFF</color>
+    <color name="error">#B00020</color>
+    <color name="received_message_background">#090D16</color>
 
 </resources>
